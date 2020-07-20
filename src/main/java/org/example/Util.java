@@ -1,10 +1,12 @@
 package org.example;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebElement;
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.io.File;
+import java.io.IOException;
 
 //Create child class Util extends with parent class Base Page
 public class Util extends BasePage
@@ -66,4 +68,22 @@ public class Util extends BasePage
     WebElement element = driver.findElement(by);
     JavascriptExecutor executor = (JavascriptExecutor)driver;
     executor.executeScript("arguments[0].click();", element);}
+
+    public static String alertMethod (By by)
+    {
+        driver.switchTo().alert().accept();
+        return driver.switchTo().alert().getText();
+    }
+    public void takeScreenShot(String screenshotName)
+    {
+        File srcFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+        try {
+            FileUtils.copyFile(srcFile, new File("src\\Screenshot\\" +screenshotName+" .jpg"));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+
+
 }

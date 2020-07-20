@@ -1,5 +1,6 @@
 package org.example;
 
+import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
@@ -13,8 +14,12 @@ public class BaseTest extends Util
         browserManager.setBrowser(); // this method have all pre condition method for open browser
     }
     @AfterMethod
-    public void closeBrowser() //create method for Close Browser
+    public void closeBrowser(ITestResult result) //create method for Close Browser
     {
-        browserManager.closeBrowser();  // this method have all pre condition method for close browser
+     if (ITestResult.FAILURE==result.getStatus())
+    {
+        takeScreenShot(result.getName()+timestamp());
     }
+        browserManager.closeBrowser();  // this method have all pre condition method for close browser
+       }
 }
