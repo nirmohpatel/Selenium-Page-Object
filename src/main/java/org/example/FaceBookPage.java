@@ -6,19 +6,20 @@ import org.testng.Assert;
 import java.util.Iterator;
 import java.util.Set;
 
-public class FaceBookPage extends Util
-{
-    private String expectedFaceBookURL = "https://www.facebook.com/nopCommerce";
-    //String expectedFaceBookURL = "";
+public class FaceBookPage extends Util  //Create child class Home Page extends with parent class Util
+{        // To create Private Variable (for security) + store Locator in private variable
+    private String expectedFaceBookURL = "https://www.facebook.com/nopCommerce"; // store URL in string
+    // get actual text from Create A Page Button
     private By _actualTextForCreateAPageButton = By.xpath("//button[@class=\"_4jy0 _4jy3 _4jy2 _51sy selected _42ft\"]");
+   // store text value in string
     String expectedTextForCreateAPageButton = "Create a Page";
+   // store actual background colour in string for assert
     String actualColourValue = "rgba(66, 183, 42, 1)";
+    // Store expected background colour in string for assert
     String expectedColourValue = "rgba(66, 183, 42, 1)";
 
 
-
-
-    public void toVerifyFacebookPopupWindow()
+    public void toVerifyFacebookPopupWindow() //create method to store all relative actions
     {
         String MainWindow=driver.getWindowHandle(); // To handle Main window
 
@@ -43,8 +44,8 @@ public class FaceBookPage extends Util
 
                 // to verification of Button Colour
                 String Colour = driver.findElement(_actualTextForCreateAPageButton).getCssValue("background-color");
-                System.out.println(Colour);
-                Assert.assertEquals(actualColourValue,expectedColourValue,"Colour is not Green");
+                System.out.println(Colour); // system out colour code
+                Assert.assertEquals(actualColourValue,expectedColourValue,"Colour is not Green"); // compare colour code
 
                 // Closing the Child Window.
                 driver.close();

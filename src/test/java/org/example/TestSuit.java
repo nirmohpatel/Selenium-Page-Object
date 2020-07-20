@@ -74,37 +74,45 @@ public class TestSuit extends BaseTest
     }
     @Test (priority = 3) // giver test case run priority
     public void toVerifyAlertPractice() // Test Case Four
-    { // call all test case four action in this method
+    {   // click on search Button
         homePage.clickOnSearchButton();
+        // Verify popup window message Text
         homePage.toVerifyAlertPopupWindowText();
 
     }
     @Test (priority = 4) // giver test case run priority
-    public void toVerifyUserShouldAbleNavigateOnNewOnlineStorePage ()
-    {
+    public void toVerifyUserShouldAbleNavigateOnNewOnlineStorePage () // Test Case Five
+    {   // click on New Home Store Is open from home page
         homePage.clickOnNewHomeStoreIsOpen();
+        // Verify "new online store is open" page id open.
         new_online_store_page.toVerifyUserIsOnNewOnlineStoreIsOpenPage();
+        // verify user enter valid detail + Enter Comment in comment box successfully
         new_online_store_page.toVerifyUserEnterValidDetailsAndLeaveCommentSuccessfully();
+        // click on new comment Button
         new_online_store_page.clickOnNewCommentButton();
+        // Verify comment enter Successfully (Bottom of page)
         new_online_store_page.toVerifyUserTypeCommentSuccessfully();
+        // verify comment add successfully add message (header)
         new_online_store_page.toVerifyUserShouldAbleToSeeCommentSuccessfullyAdd();
     }
     @Test (priority = 5) // giver test case run priority
-    public void toVerifyUserShouldAbleToNavigateOnFacebookPage()
-    {
+    public void toVerifyUserShouldAbleToNavigateOnFacebookPage()    // Test Case six
+    {   // click on Facebook icon (Facebook icon is on home page)
         homePage.clickOnFaceBookIcon();
+        // verify Facebook Popup window
         faceBookPage.toVerifyFacebookPopupWindow();
 
     }
 
-    @Test (priority = 6) // giver test case run priority
+    @Test (priority = 6) // giver test case run priority // Test Case Seven
+    // select Currency from dropdown menu
     public void toVerifyUserShouldBeAbelToChangeCurrency()
     {
         homePage.selectCurrency();
     }
 
     @Test (priority = 7) // giver test case run priority
-    public void iFramePractice ()
+    public void iFramePractice ()   // Test Case eight
     {
         driver.get("https://chercher.tech/practice/frames-example-selenium-webdriver");// over riding URL
         iFrameExample.toVerifyUserOnIFrameHomePage();//verify user is on correct website
