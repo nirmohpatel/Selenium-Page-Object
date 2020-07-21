@@ -16,9 +16,9 @@ public class BaseTest extends Util
     @AfterMethod
     public void closeBrowser(ITestResult result) //create method for Close Browser
     {
-     if (ITestResult.FAILURE==result.getStatus())
+     if (ITestResult.FAILURE==result.getStatus()) // condition (when test case is failure) for taking screenshot
     {
-        takeScreenShot(result.getName()+timestamp());
+        takeScreenShot(result.getName()+timestamp()); // create method for screenshot + timeStamp
     }
         browserManager.closeBrowser();  // this method have all pre condition method for close browser
        }

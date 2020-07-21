@@ -80,7 +80,7 @@ public class TestSuit extends BaseTest
         homePage.toVerifyAlertPopupWindowText();
 
     }
-    @Test (priority = 4) // giver test case run priority
+    @Test (priority = 4) // give test case run priority
     public void toVerifyUserShouldAbleNavigateOnNewOnlineStorePage () // Test Case Five
     {   // click on New Home Store Is open from home page
         homePage.clickOnNewHomeStoreIsOpen();
@@ -95,7 +95,7 @@ public class TestSuit extends BaseTest
         // verify comment add successfully add message (header)
         new_online_store_page.toVerifyUserShouldAbleToSeeCommentSuccessfullyAdd();
     }
-    @Test (priority = 5) // giver test case run priority
+    @Test (priority = 5) // give test case run priority
     public void toVerifyUserShouldAbleToNavigateOnFacebookPage()    // Test Case six
     {   // click on Facebook icon (Facebook icon is on home page)
         homePage.clickOnFaceBookIcon();
@@ -104,14 +104,14 @@ public class TestSuit extends BaseTest
 
     }
 
-    @Test (priority = 6) // giver test case run priority // Test Case Seven
+    @Test (priority = 6) // give test case run priority // Test Case Seven
     // select Currency from dropdown menu
     public void toVerifyUserShouldBeAbelToChangeCurrency()
     {
         homePage.selectCurrency();
     }
 
-    @Test (priority = 7) // giver test case run priority
+    @Test (priority = 7) // give test case run priority
     public void iFramePractice ()   // Test Case eight
     {
         driver.get("https://chercher.tech/practice/frames-example-selenium-webdriver");// over riding URL

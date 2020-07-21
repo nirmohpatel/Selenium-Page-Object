@@ -97,14 +97,19 @@ public class HomePage extends Util  //Create child class Home Page extends with 
 //        }
 
 
-    }
-    public void toVerifyAlertPopupWindowText()
-    {
+    } // Here i have not created reusable Alert method. Because of, I am using alert only once.
+    public void toVerifyAlertPopupWindowText() //create Alert method to store all relative actions
+    {   // switch web-driver to alert window
         Alert alert = driver.switchTo().alert();
+        // store actual alert massage in string
         String actualAlertMassage = driver.switchTo().alert().getText();
+        // system out actual massage
         System.out.println(actualAlertMassage);
+        // store expected alert massage in string
         String expectedAlertMassage = "Please enter some search keyword";
+        //Compare (Assert) actual and expected Message + when condition will fail then message will print in console
         Assert.assertEquals((actualAlertMassage),expectedAlertMassage);
+        // accepting alert
         alert.accept();
     }
 
