@@ -1,6 +1,7 @@
 package org.example;
 
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 
 import java.util.concurrent.TimeUnit;
 
@@ -8,10 +9,30 @@ public class BrowserManager extends Util    //Create BrowserManager class for Op
 {
     public void setBrowser() // create Method for start up browser
     {
-        // setting up chrome driver path
-        System.setProperty("webdriver.chrome.driver","src\\test\\BrowserDrivers\\chromedriver.exe");
-        // create chrome driver object to open Google Chrome browser
-        driver=new ChromeDriver();
+//        String browserName = "chrome";
+//
+//        if (browserName.equalsIgnoreCase("chrome"))
+//        {
+//        // setting up chrome driver path
+//        System.setProperty("webdriver.chrome.driver", "src\\test\\resources\\BrowserDrivers\\chromedriver.exe");
+//        // create chrome driver object to open Google Chrome browser
+//        driver = new ChromeDriver();
+//        }else if (browserName.equalsIgnoreCase("firefox"))
+//        {
+//            // setting up chrome driver path
+//            System.setProperty("webdriver.gecko.driver", "src\\test\\resources\\BrowserDrivers\\geckodriver.exe");
+//            // create chrome driver object to open Google Chrome browser
+//            driver = new FirefoxDriver();
+//        } else if (browserName.equalsIgnoreCase("ie"))
+//        {
+//            // setting up chrome driver path
+//            System.setProperty("webdriver.chrome.driver", "src\\test\\resources\\BrowserDrivers\\ie.exe");
+//            // create chrome driver object to open Google Chrome browser
+//            driver = new ieDriver();
+//        } else
+//            {
+//                System.out.println("you browser name is wrong or empty" + browserName);
+//            }
         // maximising screen
         driver.manage().window().maximize();
         // Applying implicitly wait of 10 sec to driver instance
